@@ -2,7 +2,7 @@ require 'base64'
 require_relative "Encoders"
 
 include Encoders
-
+include Decoders
 
 
 
@@ -23,9 +23,9 @@ when "1"
 	base_64_number = Encoders.hex_to_base64(hex_to_be_converted)
 
 when "2"
-	puts "Enter hex number 1."
+	puts "Enter hex number"
 	string_number = gets.chomp
-	puts "Enter key 2."
+	puts "Enter key"
 	string_key = gets.chomp
 
 	puts xor_string = fixed_XOR(string_number,string_key)
@@ -34,13 +34,13 @@ when "3"
 	puts "please enter the hex to be decrypted"
 
 	decryption = gets.chomp
-
-	puts xor_cipher(decryption)
+	puts single_XOR_key()
+	
 
 when "4"
 	puts "enter the hex to be cracked"
 	hex_to_be_scanned = gets.chomp
-	puts single_xor_cracker(hex_to_be_scanned)	
+
 
 when "test"
 	puts base_64_number
